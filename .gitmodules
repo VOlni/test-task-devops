@@ -1,0 +1,3 @@
+[submodule "nest-js-app"]
+	path = nest-js-app
+	url = https://github.com/nestjs/typescript-starter

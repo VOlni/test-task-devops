@@ -1,0 +1,39 @@
+# Bootstrapping EC2 host
+#!/bin/bash
+
+sudo apt-get update -y
+sudo apt-get install -y apache2 ca-certificates curl docker.io
+
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+sudo usermod -aG docker ubuntu
+newgrp docker
+
+myip=$(curl -s ifconfig.me)
+docker_v=$(sudo docker version)
+
+cat <<EOF > ~/index.html
+<html>
+<h2><font color='red'>Built by Power of Terraform </font></h2>
+<br>
+Owner ${owner_name} from ${owner_group} group 
+<br>
+Host's tags are:
+<br>
+%{ for host_tag in host_tags ~}
+<font color='blue'>${host_tag}<br></font>
+%{ endfor ~}
+
+<h2>Docker version: $docker_v</h2>
+
+<h3>Webserver with IP: $myip</h3>
+
+</html>
+EOF
+
+sudo cp ~/index.html /var/www/html/index.html
+sudo systemctl restart apache2
