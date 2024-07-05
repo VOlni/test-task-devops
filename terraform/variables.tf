@@ -52,10 +52,3 @@ variable "common_tags" {
     Environment = "Destroyable"
   }
 }
-
-# DNS Setup
-variable "domain_name" {
-  description = "The domain name to use for Route 53 record"
-  type        = string
-  default     = "your-domain.com"
-}
