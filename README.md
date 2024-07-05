@@ -112,3 +112,7 @@ This is not the ideal setup, it's not ideal and not very production ready, there
 ## DNS
 
 Just if you are interested in, I have a Namecheap DNS, and it's needed to set up custom DNS on the Namecheap from AWS Route53 NS record DNS.
+
+## P.S.
+
+Maybe I missed something and made some mistakes because I was in a hurry due to limited time, but I have done a good job, refreshed some memories and played with technologies, enjoyed my time. Thank you! :)
