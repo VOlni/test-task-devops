@@ -4,6 +4,8 @@
 
 This is a test task for DevOps position.
 
+Corresponding documentation can be found in the **docs** folder.
+
 It was required to set up simple CI/CD pipeline that will clone NestJS repository, build it and deploy to some free tier AWS EC2 instance.
 
 Currently the code is built and deployed to the host as a Docker image.
